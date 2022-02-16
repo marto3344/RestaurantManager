@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RestаurantManager.View;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,13 @@ namespace RestаurantManager
         public LoginForm()
         {
             InitializeComponent();
+        }
+
+        private void WaiterButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();        
+            WaiterLogin waiterForm=new WaiterLogin();  
+            waiterForm.Show();
         }
     }
 }
