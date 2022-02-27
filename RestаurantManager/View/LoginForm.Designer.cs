@@ -59,7 +59,7 @@
             this.WaiterButton.Location = new System.Drawing.Point(375, 237);
             this.WaiterButton.Name = "WaiterButton";
             this.WaiterButton.Size = new System.Drawing.Size(250, 50);
-            this.WaiterButton.TabIndex = 2;
+            this.WaiterButton.TabIndex = 0;
             this.WaiterButton.Text = "Waiter";
             this.WaiterButton.UseVisualStyleBackColor = true;
             this.WaiterButton.Click += new System.EventHandler(this.WaiterButton_Click);
@@ -69,7 +69,7 @@
             this.AdminButton.Location = new System.Drawing.Point(375, 330);
             this.AdminButton.Name = "AdminButton";
             this.AdminButton.Size = new System.Drawing.Size(250, 50);
-            this.AdminButton.TabIndex = 3;
+            this.AdminButton.TabIndex = 1;
             this.AdminButton.Text = "Admin";
             this.AdminButton.UseVisualStyleBackColor = true;
             this.AdminButton.Click += new System.EventHandler(this.AdminButton_Click);

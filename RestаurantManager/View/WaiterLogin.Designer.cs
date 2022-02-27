@@ -41,16 +41,17 @@
             this.WaiterLoginButton.Location = new System.Drawing.Point(362, 320);
             this.WaiterLoginButton.Name = "WaiterLoginButton";
             this.WaiterLoginButton.Size = new System.Drawing.Size(250, 50);
-            this.WaiterLoginButton.TabIndex = 0;
+            this.WaiterLoginButton.TabIndex = 2;
             this.WaiterLoginButton.Text = "Login";
             this.WaiterLoginButton.UseVisualStyleBackColor = true;
+            this.WaiterLoginButton.Click += new System.EventHandler(this.WaiterLoginButton_Click);
             // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(38, 501);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(125, 25);
-            this.button1.TabIndex = 1;
+            this.button1.TabIndex = 3;
             this.button1.Text = "Back";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -60,14 +61,15 @@
             this.PasswordBox.Location = new System.Drawing.Point(362, 282);
             this.PasswordBox.Name = "PasswordBox";
             this.PasswordBox.Size = new System.Drawing.Size(250, 22);
-            this.PasswordBox.TabIndex = 2;
+            this.PasswordBox.TabIndex = 1;
+            this.PasswordBox.UseSystemPasswordChar = true;
             // 
             // WaiterNameBox
             // 
             this.WaiterNameBox.Location = new System.Drawing.Point(362, 229);
             this.WaiterNameBox.Name = "WaiterNameBox";
             this.WaiterNameBox.Size = new System.Drawing.Size(250, 22);
-            this.WaiterNameBox.TabIndex = 3;
+            this.WaiterNameBox.TabIndex = 0;
             // 
             // label1
             // 

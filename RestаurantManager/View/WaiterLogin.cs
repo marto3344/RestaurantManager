@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RestаurantManager.Controller;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -27,6 +28,22 @@ namespace RestаurantManager.View
             LoginForm loginForm = new LoginForm();
             ActiveForm.Hide();
             loginForm.Show();
+        }
+
+        private void WaiterLoginButton_Click(object sender, EventArgs e)
+        {
+            string waiterName = WaiterNameBox.Text;
+            string waiterPassword = PasswordBox.Text;
+            if (UserAuthenticationService.CheckAdminLogin(waiterName, waiterPassword))
+            {
+                this.Hide();
+                MessageBox.Show("Successful login as admin");
+            }
+            else
+            {
+                MessageBox.Show("Invalid username or password!\nPlease chack your login information and try again");
+            }
+
         }
     }
 }

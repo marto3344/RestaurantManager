@@ -59,21 +59,22 @@
             this.AdminNameBox.Location = new System.Drawing.Point(352, 215);
             this.AdminNameBox.Name = "AdminNameBox";
             this.AdminNameBox.Size = new System.Drawing.Size(250, 22);
-            this.AdminNameBox.TabIndex = 9;
+            this.AdminNameBox.TabIndex = 0;
             // 
             // AdminPasswordBox
             // 
             this.AdminPasswordBox.Location = new System.Drawing.Point(352, 268);
             this.AdminPasswordBox.Name = "AdminPasswordBox";
             this.AdminPasswordBox.Size = new System.Drawing.Size(250, 22);
-            this.AdminPasswordBox.TabIndex = 8;
+            this.AdminPasswordBox.TabIndex = 1;
+            this.AdminPasswordBox.UseSystemPasswordChar = true;
             // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(28, 487);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(125, 25);
-            this.button1.TabIndex = 7;
+            this.button1.TabIndex = 3;
             this.button1.Text = "Back";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -83,9 +84,10 @@
             this.AdminLoginButton.Location = new System.Drawing.Point(352, 306);
             this.AdminLoginButton.Name = "AdminLoginButton";
             this.AdminLoginButton.Size = new System.Drawing.Size(250, 50);
-            this.AdminLoginButton.TabIndex = 6;
+            this.AdminLoginButton.TabIndex = 2;
             this.AdminLoginButton.Text = "Login";
             this.AdminLoginButton.UseVisualStyleBackColor = true;
+            this.AdminLoginButton.Click += new System.EventHandler(this.AdminLoginButton_Click);
             // 
             // AdminLogin
             // 
