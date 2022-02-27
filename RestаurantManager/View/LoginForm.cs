@@ -24,5 +24,13 @@ namespace RestаurantManager
             WaiterLogin waiterForm=new WaiterLogin();  
             waiterForm.Show();
         }
+
+        private void AdminButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AdminLogin adminForm=new AdminLogin();
+            adminForm.Show();
+            
+        }
     }
 }

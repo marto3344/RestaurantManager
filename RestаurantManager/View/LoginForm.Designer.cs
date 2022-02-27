@@ -72,6 +72,7 @@
             this.AdminButton.TabIndex = 3;
             this.AdminButton.Text = "Admin";
             this.AdminButton.UseVisualStyleBackColor = true;
+            this.AdminButton.Click += new System.EventHandler(this.AdminButton_Click);
             // 
             // LoginForm
             // 
