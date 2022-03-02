@@ -22,17 +22,17 @@ namespace RestаurantManager.Controller
 
         private void Initialize()
         {
-            server = "sql11.freesqldatabase.com";
-            database = "sql11472934";
-            uid = "sql11472934";
-            password = "tz7n623q3t";
+            server = "localhost";
+            database = "restaurant_manager";
+            uid = "root";
+            password = "123456";
             string connectionString;
             connectionString = "SERVER=" + server + ";" + "DATABASE=" +
             database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
 
             connection = new MySqlConnection(connectionString);        
         }
-        private bool OpenConnection()
+        public bool OpenConnection()
         {
             try
             {

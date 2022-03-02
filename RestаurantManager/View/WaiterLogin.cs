@@ -45,5 +45,10 @@ namespace RestаurantManager.View
             }
 
         }
+
+        private void WaiterLogin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

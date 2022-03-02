@@ -106,6 +106,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Restaurant Manage Pro";
             this.Activated += new System.EventHandler(this.WaiterLogin_Activated);
+            this.Load += new System.EventHandler(this.WaiterLogin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
