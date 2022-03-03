@@ -36,8 +36,9 @@ namespace RestаurantManager.View
             string adminPassword = AdminPasswordBox.Text;
             if(UserAuthenticationService.CheckAdminLogin(adminName, adminPassword))
             {
+                AdminApp adminApp = new AdminApp(); 
                 this.Hide();
-                MessageBox.Show("Successful login as admin");
+                adminApp.Show();
             }
             else
             {

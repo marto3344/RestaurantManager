@@ -79,7 +79,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1006, 553);
+            this.ClientSize = new System.Drawing.Size(1002, 549);
             this.Controls.Add(this.AdminButton);
             this.Controls.Add(this.WaiterButton);
             this.Controls.Add(this.label2);

@@ -53,6 +53,12 @@
     <Compile Include="Model\Admin.cs" />
     <Compile Include="Model\Product.cs" />
     <Compile Include="Model\Waiter.cs" />
+    <Compile Include="View\AdminApp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AdminApp.Designer.cs">
+      <DependentUpon>AdminApp.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\AdminLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +88,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\AdminApp.resx">
+      <DependentUpon>AdminApp.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\AdminLogin.resx">
       <DependentUpon>AdminLogin.cs</DependentUpon>
     </EmbeddedResource>
