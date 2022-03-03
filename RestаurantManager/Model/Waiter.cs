@@ -8,11 +8,15 @@ namespace RestаurantManager.Model
 {
     public class Waiter
     {
-        private string _waiterName;
-        private string _waiterPassword;
-        private int _id;
-        public string WaiterName { get;set; }
-        public string WaiterPassword { get;set; }
-        public int Id { get;set;}
+
+        public string Name { get; set; }
+        public string Password { get; set; }
+        public int Id { get; set; }
+        public Waiter(int id, string name, string password)
+        {
+            this.Id = id;
+            this.Name = name;
+            this.Password = password;
+        }
     }
 }

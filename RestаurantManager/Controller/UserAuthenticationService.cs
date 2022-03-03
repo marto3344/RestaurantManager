@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using RestаurantManager.Model;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -9,11 +10,11 @@ using System.Windows.Forms;
 
 namespace RestаurantManager.Controller
 {
-    public  class UserAuthenticationService
+    public class UserAuthenticationService
     {
-       
 
-        public static bool CheckAdminLogin(string userName, string Password)
+
+        public static bool CheckAdminLogin(string userName, string userPassword)
         {
             string server = "localhost";
             string database = "restaurant_manager";
@@ -23,23 +24,31 @@ namespace RestаurantManager.Controller
             connectionString = "SERVER=" + server + ";" + "DATABASE=" +
             database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
 
-            MySqlConnection dbCon= new MySqlConnection(connectionString);
+            MySqlConnection dbCon = new MySqlConnection(connectionString);
             using (dbCon)
             {
                 try
                 {
-                    string result = "";
+                    Admin admin;
                     dbCon.Open();
-                    string sql= "SELECT*FROM admins";
-                    var cmd = new MySqlCommand(sql,dbCon);
+                    string sql = "SELECT*FROM admins";
+                    var cmd = new MySqlCommand(sql, dbCon);
                     MySqlDataReader rdr = cmd.ExecuteReader();
+                    List<Admin> admins = new List<Admin>();
                     while (rdr.Read())
                     {
-                        result = string.Format("{0} {1} {2}", rdr.GetInt32(0), rdr.GetString(1),
-                                rdr.GetString(2));
+                        admin = new Admin(rdr.GetInt32(0), rdr.GetString(1), rdr.GetString(2));
+                        admins.Add(admin);
                     }
-                    MessageBox.Show(result);
-                    return true;
+                    foreach (var admin1 in admins)
+                    {
+                        if(admin1.AdminName==userName&&admin1.AdminPassword==userPassword)
+                        {
+                            return true;
+                        }
+                    }
+                    dbCon.Close();
+                    return false;
 
                 }
                 catch (Exception e)
@@ -49,17 +58,48 @@ namespace RestаurantManager.Controller
                 }
             }
         }
-        public static bool CheckWaiterLogin(string userName, string Password)
+        public static bool CheckWaiterLogin(string userName, string userPassword)
         {
-            try
-            {
-                return true;
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-                return false;
+            string server = "localhost";
+            string database = "restaurant_manager";
+            string uid = "root";
+            string password = "123456";
+            string connectionString;
+            connectionString = "SERVER=" + server + ";" + "DATABASE=" +
+            database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
 
+            MySqlConnection dbCon = new MySqlConnection(connectionString);
+            using (dbCon)
+            {
+                try
+                {
+                    Waiter waiter;
+                    dbCon.Open();
+                    string sql = "SELECT*FROM waiter";
+                    var cmd = new MySqlCommand(sql, dbCon);
+                    MySqlDataReader rdr = cmd.ExecuteReader();
+                    List<Waiter> waiters = new List<Waiter>();
+                    while (rdr.Read())
+                    {
+                        waiter = new Waiter(rdr.GetInt32(0), rdr.GetString(1), rdr.GetString(2));
+                        waiters.Add(waiter);
+                    }
+                    foreach (var item in waiters)
+                    {
+                        if (item.Name == userName && item.Password == userPassword)
+                        {
+                            return true;
+                        }
+                    }
+                    dbCon.Close();
+                    return false;
+
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.Message);
+                    return false;
+                }
             }
         }
     }

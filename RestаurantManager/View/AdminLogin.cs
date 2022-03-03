@@ -41,7 +41,7 @@ namespace RestаurantManager.View
             }
             else
             {
-                MessageBox.Show("Invalid username or password!\nPlease chack your login information and try again");
+                MessageBox.Show("Invalid username or password!\nPlease check your login information and try again");
             }
 
         }
