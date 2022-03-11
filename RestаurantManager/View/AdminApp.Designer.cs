@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.SideNavPanel = new System.Windows.Forms.Panel();
+            this.ExitButton = new System.Windows.Forms.Button();
+            this.SwitchAccountButton = new System.Windows.Forms.Button();
+            this.ViewWaitersButton = new System.Windows.Forms.Button();
             this.MealsButton = new System.Windows.Forms.Button();
             this.TablesButton = new System.Windows.Forms.Button();
             this.LogoPanel = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.ViewWaitersButton = new System.Windows.Forms.Button();
-            this.SwitchAccountButton = new System.Windows.Forms.Button();
-            this.ExitButton = new System.Windows.Forms.Button();
             this.SideNavPanel.SuspendLayout();
             this.LogoPanel.SuspendLayout();
             this.SuspendLayout();
@@ -55,6 +55,47 @@
             this.SideNavPanel.Size = new System.Drawing.Size(250, 673);
             this.SideNavPanel.TabIndex = 0;
             // 
+            // ExitButton
+            // 
+            this.ExitButton.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.ExitButton.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.ExitButton.Location = new System.Drawing.Point(0, 561);
+            this.ExitButton.Name = "ExitButton";
+            this.ExitButton.Size = new System.Drawing.Size(250, 56);
+            this.ExitButton.TabIndex = 5;
+            this.ExitButton.Text = "Exit";
+            this.ExitButton.UseVisualStyleBackColor = false;
+            this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
+            this.ExitButton.Enter += new System.EventHandler(this.ExitButton_Enter);
+            this.ExitButton.Leave += new System.EventHandler(this.ExitButton_Leave);
+            // 
+            // SwitchAccountButton
+            // 
+            this.SwitchAccountButton.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.SwitchAccountButton.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.SwitchAccountButton.Location = new System.Drawing.Point(0, 617);
+            this.SwitchAccountButton.Name = "SwitchAccountButton";
+            this.SwitchAccountButton.Size = new System.Drawing.Size(250, 56);
+            this.SwitchAccountButton.TabIndex = 4;
+            this.SwitchAccountButton.Text = "Switch account";
+            this.SwitchAccountButton.UseVisualStyleBackColor = false;
+            this.SwitchAccountButton.Click += new System.EventHandler(this.SwitchAccountButton_Click);
+            this.SwitchAccountButton.Enter += new System.EventHandler(this.SwitchAccountButton_Enter);
+            this.SwitchAccountButton.Leave += new System.EventHandler(this.SwitchAccountButton_Leave);
+            // 
+            // ViewWaitersButton
+            // 
+            this.ViewWaitersButton.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.ViewWaitersButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ViewWaitersButton.Location = new System.Drawing.Point(0, 258);
+            this.ViewWaitersButton.Name = "ViewWaitersButton";
+            this.ViewWaitersButton.Size = new System.Drawing.Size(250, 56);
+            this.ViewWaitersButton.TabIndex = 3;
+            this.ViewWaitersButton.Text = "View Waiters";
+            this.ViewWaitersButton.UseVisualStyleBackColor = false;
+            this.ViewWaitersButton.Enter += new System.EventHandler(this.ViewWaitersButton_Enter);
+            this.ViewWaitersButton.Leave += new System.EventHandler(this.ViewWaitersButton_Leave);
+            // 
             // MealsButton
             // 
             this.MealsButton.BackColor = System.Drawing.Color.DeepSkyBlue;
@@ -66,11 +107,13 @@
             this.MealsButton.Text = "Meals";
             this.MealsButton.UseVisualStyleBackColor = false;
             this.MealsButton.Click += new System.EventHandler(this.button1_Click);
+            this.MealsButton.Enter += new System.EventHandler(this.MealsButton_Enter);
+            this.MealsButton.Leave += new System.EventHandler(this.MealsButton_Leave);
             this.MealsButton.MouseHover += new System.EventHandler(this.MealsButton_MouseHover);
             // 
             // TablesButton
             // 
-            this.TablesButton.BackColor = System.Drawing.Color.RoyalBlue;
+            this.TablesButton.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.TablesButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.TablesButton.Location = new System.Drawing.Point(0, 146);
             this.TablesButton.Name = "TablesButton";
@@ -78,6 +121,8 @@
             this.TablesButton.TabIndex = 1;
             this.TablesButton.Text = "Tables";
             this.TablesButton.UseVisualStyleBackColor = false;
+            this.TablesButton.Enter += new System.EventHandler(this.TablesButton_Enter);
+            this.TablesButton.Leave += new System.EventHandler(this.TablesButton_Leave);
             // 
             // LogoPanel
             // 
@@ -97,41 +142,6 @@
             this.label1.Size = new System.Drawing.Size(223, 40);
             this.label1.TabIndex = 0;
             this.label1.Text = "Restaurant Manager Pro";
-            // 
-            // ViewWaitersButton
-            // 
-            this.ViewWaitersButton.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.ViewWaitersButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ViewWaitersButton.Location = new System.Drawing.Point(0, 258);
-            this.ViewWaitersButton.Name = "ViewWaitersButton";
-            this.ViewWaitersButton.Size = new System.Drawing.Size(250, 56);
-            this.ViewWaitersButton.TabIndex = 3;
-            this.ViewWaitersButton.Text = "View Waiters";
-            this.ViewWaitersButton.UseVisualStyleBackColor = false;
-            // 
-            // SwitchAccountButton
-            // 
-            this.SwitchAccountButton.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.SwitchAccountButton.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.SwitchAccountButton.Location = new System.Drawing.Point(0, 617);
-            this.SwitchAccountButton.Name = "SwitchAccountButton";
-            this.SwitchAccountButton.Size = new System.Drawing.Size(250, 56);
-            this.SwitchAccountButton.TabIndex = 4;
-            this.SwitchAccountButton.Text = "Switch account";
-            this.SwitchAccountButton.UseVisualStyleBackColor = false;
-            this.SwitchAccountButton.Click += new System.EventHandler(this.SwitchAccountButton_Click);
-            // 
-            // ExitButton
-            // 
-            this.ExitButton.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.ExitButton.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.ExitButton.Location = new System.Drawing.Point(0, 561);
-            this.ExitButton.Name = "ExitButton";
-            this.ExitButton.Size = new System.Drawing.Size(250, 56);
-            this.ExitButton.TabIndex = 5;
-            this.ExitButton.Text = "Exit";
-            this.ExitButton.UseVisualStyleBackColor = false;
-            this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
             // AdminApp
             // 
