@@ -36,6 +36,7 @@
             this.TablesButton = new System.Windows.Forms.Button();
             this.LogoPanel = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.contentPanel = new System.Windows.Forms.Panel();
             this.SideNavPanel.SuspendLayout();
             this.LogoPanel.SuspendLayout();
             this.SuspendLayout();
@@ -59,6 +60,7 @@
             // 
             this.ExitButton.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.ExitButton.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.ExitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ExitButton.Location = new System.Drawing.Point(0, 561);
             this.ExitButton.Name = "ExitButton";
             this.ExitButton.Size = new System.Drawing.Size(250, 56);
@@ -73,6 +75,7 @@
             // 
             this.SwitchAccountButton.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.SwitchAccountButton.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.SwitchAccountButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SwitchAccountButton.Location = new System.Drawing.Point(0, 617);
             this.SwitchAccountButton.Name = "SwitchAccountButton";
             this.SwitchAccountButton.Size = new System.Drawing.Size(250, 56);
@@ -87,6 +90,7 @@
             // 
             this.ViewWaitersButton.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.ViewWaitersButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ViewWaitersButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ViewWaitersButton.Location = new System.Drawing.Point(0, 258);
             this.ViewWaitersButton.Name = "ViewWaitersButton";
             this.ViewWaitersButton.Size = new System.Drawing.Size(250, 56);
@@ -100,6 +104,7 @@
             // 
             this.MealsButton.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.MealsButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.MealsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.MealsButton.Location = new System.Drawing.Point(0, 202);
             this.MealsButton.Name = "MealsButton";
             this.MealsButton.Size = new System.Drawing.Size(250, 56);
@@ -115,12 +120,14 @@
             // 
             this.TablesButton.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.TablesButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.TablesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TablesButton.Location = new System.Drawing.Point(0, 146);
             this.TablesButton.Name = "TablesButton";
             this.TablesButton.Size = new System.Drawing.Size(250, 56);
             this.TablesButton.TabIndex = 1;
             this.TablesButton.Text = "Tables";
             this.TablesButton.UseVisualStyleBackColor = false;
+            this.TablesButton.Click += new System.EventHandler(this.TablesButton_Click);
             this.TablesButton.Enter += new System.EventHandler(this.TablesButton_Enter);
             this.TablesButton.Leave += new System.EventHandler(this.TablesButton_Leave);
             // 
@@ -143,11 +150,20 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Restaurant Manager Pro";
             // 
+            // contentPanel
+            // 
+            this.contentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.contentPanel.Location = new System.Drawing.Point(250, 0);
+            this.contentPanel.Name = "contentPanel";
+            this.contentPanel.Size = new System.Drawing.Size(1002, 673);
+            this.contentPanel.TabIndex = 1;
+            // 
             // AdminApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1252, 673);
+            this.Controls.Add(this.contentPanel);
             this.Controls.Add(this.SideNavPanel);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Name = "AdminApp";
@@ -170,5 +186,6 @@
         private System.Windows.Forms.Button ExitButton;
         private System.Windows.Forms.Button SwitchAccountButton;
         private System.Windows.Forms.Button ViewWaitersButton;
+        private System.Windows.Forms.Panel contentPanel;
     }
 }

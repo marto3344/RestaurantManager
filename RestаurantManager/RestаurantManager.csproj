@@ -79,6 +79,24 @@
     <Compile Include="View\AdminApp.Designer.cs">
       <DependentUpon>AdminApp.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\AdminAppForms\AdminTables.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AdminAppForms\AdminTables.Designer.cs">
+      <DependentUpon>AdminTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\AdminAppForms\AdminWaiters.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AdminAppForms\AdminWaiters.Designer.cs">
+      <DependentUpon>AdminWaiters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\AdminAppForms\MealsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AdminAppForms\MealsForm.Designer.cs">
+      <DependentUpon>MealsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\AdminLogin.cs">
       <SubType>Form</SubType>
     </Compile>

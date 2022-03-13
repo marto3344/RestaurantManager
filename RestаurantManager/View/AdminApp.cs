@@ -62,6 +62,7 @@ namespace RestаurantManager.View
             }
         }
 
+        //Button Hover animation
         private void TablesButton_Enter(object sender, EventArgs e)
         {
             TablesButton.BackColor = Color.RoyalBlue;
@@ -110,6 +111,18 @@ namespace RestаurantManager.View
         private void SwitchAccountButton_Leave(object sender, EventArgs e)
         {
             SwitchAccountButton.BackColor= Color.DeepSkyBlue;
+        }
+        private void OpenContentForm(Form contentForm,object btnSender)
+        {
+            /*if (active)
+            {
+
+            }*/
+        }
+
+        private void TablesButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
