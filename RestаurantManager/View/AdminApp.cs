@@ -12,6 +12,8 @@ namespace RestаurantManager.View
 {
     public partial class AdminApp : Form
     {
+        private Button currentButton;
+        private Form activeForm;
         public AdminApp()
         {
             InitializeComponent();
@@ -114,15 +116,25 @@ namespace RestаurantManager.View
         }
         private void OpenContentForm(Form contentForm,object btnSender)
         {
-            /*if (active)
+            if (activeForm!=null)
             {
+                activeForm.Close();
+            }
+            activeForm = contentForm;
+            contentForm.TopLevel=false;
+            contentForm.FormBorderStyle= FormBorderStyle.None;
+            contentForm.Dock = DockStyle.Fill;  
+            this.contentPanel.Controls.Add(contentForm);
+            this.contentPanel.Tag = contentForm;
+            contentForm.BringToFront(); 
+            contentForm.Show();
 
-            }*/
         }
+        
 
         private void TablesButton_Click(object sender, EventArgs e)
         {
-
-        }
+            OpenContentForm(new AdminAppForms.AdminTables(),sender);
+        }   
     }
 }

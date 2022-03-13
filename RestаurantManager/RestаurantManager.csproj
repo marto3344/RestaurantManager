@@ -129,6 +129,9 @@
     <EmbeddedResource Include="View\AdminApp.resx">
       <DependentUpon>AdminApp.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\AdminAppForms\AdminTables.resx">
+      <DependentUpon>AdminTables.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\AdminLogin.resx">
       <DependentUpon>AdminLogin.cs</DependentUpon>
     </EmbeddedResource>
