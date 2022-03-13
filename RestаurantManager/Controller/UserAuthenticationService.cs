@@ -15,16 +15,8 @@ namespace RestаurantManager.Controller
 
 
         public static bool CheckAdminLogin(string userName, string userPassword)
-        {
-            string server = "localhost";
-            string database = "restaurant_manager";
-            string uid = "root";
-            string password = "123456";
-            string connectionString;
-            connectionString = "SERVER=" + server + ";" + "DATABASE=" +
-            database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
-
-            MySqlConnection dbCon = new MySqlConnection(connectionString);
+        {         
+            MySqlConnection dbCon = new MySqlConnection(DBConnection.GetConnectionString());
             using (dbCon)
             {
                 try
@@ -59,16 +51,8 @@ namespace RestаurantManager.Controller
             }
         }
         public static bool CheckWaiterLogin(string userName, string userPassword)
-        {
-            string server = "localhost";
-            string database = "restaurant_manager";
-            string uid = "root";
-            string password = "123456";
-            string connectionString;
-            connectionString = "SERVER=" + server + ";" + "DATABASE=" +
-            database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
-
-            MySqlConnection dbCon = new MySqlConnection(connectionString);
+        { 
+            MySqlConnection dbCon = new MySqlConnection(DBConnection.GetConnectionString());
             using (dbCon)
             {
                 try
