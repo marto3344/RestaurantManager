@@ -12,7 +12,6 @@ namespace RestаurantManager.View
 {
     public partial class AdminApp : Form
     {
-        private Button currentButton;
         private Form activeForm;
         public AdminApp()
         {
@@ -36,7 +35,7 @@ namespace RestаurantManager.View
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            OpenContentForm(new AdminAppForms.MealsForm(), sender);
         }
 
         private void MealsButton_MouseHover(object sender, EventArgs e)
@@ -67,7 +66,7 @@ namespace RestаurantManager.View
         //Button Hover animation
         private void TablesButton_Enter(object sender, EventArgs e)
         {
-            TablesButton.BackColor = Color.RoyalBlue;
+            TablesButton.BackColor = Color.DeepSkyBlue;
         }
 
         private void TablesButton_Leave(object sender, EventArgs e)

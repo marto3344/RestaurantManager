@@ -71,7 +71,7 @@
     <Compile Include="Controller\RestaurantController.cs" />
     <Compile Include="Controller\UserAuthenticationService.cs" />
     <Compile Include="Model\Admin.cs" />
-    <Compile Include="Model\Product.cs" />
+    <Compile Include="Model\Meal.cs" />
     <Compile Include="Model\Waiter.cs" />
     <Compile Include="View\AdminApp.cs">
       <SubType>Form</SubType>
@@ -131,6 +131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\AdminAppForms\AdminTables.resx">
       <DependentUpon>AdminTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AdminAppForms\MealsForm.resx">
+      <DependentUpon>MealsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\AdminLogin.resx">
       <DependentUpon>AdminLogin.cs</DependentUpon>
