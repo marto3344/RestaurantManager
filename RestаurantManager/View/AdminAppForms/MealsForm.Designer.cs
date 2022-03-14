@@ -83,6 +83,7 @@
             this.button2.TabIndex = 5;
             this.button2.Text = "Add Meal";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label3
             // 

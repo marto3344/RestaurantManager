@@ -15,7 +15,8 @@ namespace RestаurantManager.View.AdminAppForms
 {
     public partial class MealsForm : Form
     {
-        private MySqlConnection dbCon=new MySqlConnection(DBConnection.GetConnectionString());
+        private MySqlConnection dbCon = new MySqlConnection(DBConnection.GetConnectionString());
+        private RestaurantController controller = new RestaurantController();
         public MealsForm()
         {
             InitializeComponent();
@@ -33,7 +34,7 @@ namespace RestаurantManager.View.AdminAppForms
 
         private void MealsForm_Load(object sender, EventArgs e)
         {
-            using(dbCon)
+            using (dbCon)
             {
                 try
                 {
@@ -42,7 +43,7 @@ namespace RestаurantManager.View.AdminAppForms
                     string sql = "SELECT*FROM meal";
                     var cmd = new MySqlCommand(sql, dbCon);
                     MySqlDataReader rdr = cmd.ExecuteReader();
-                    while(rdr.Read())
+                    while (rdr.Read())
                     {
                         meal = new Meal(rdr.GetString(1), rdr.GetDecimal(2));
                         ListViewItem mealItem = new ListViewItem(meal.Name);
@@ -52,10 +53,24 @@ namespace RestаurantManager.View.AdminAppForms
                 }
                 catch (Exception err)
                 {
-
                     MessageBox.Show(err.Message);
                 }
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string name = mealNameBox.Text;
+            decimal price = decimal.Parse(mealPriceBox.Text);
+            if (controller.AddMeal(name, price))
+            {
+                MessageBox.Show("Meal added successfully");
+                ListViewItem mealItem = new ListViewItem(name);
+                mealItem.SubItems.Add(price.ToString());
+                listView1.Items.Add(mealItem);
+            }
+            else MessageBox.Show("This meal already exists!\nTry again!");
+        }
+
     }
 }
