@@ -30,7 +30,7 @@ namespace RestаurantManager.View
 
         private void AdminApp_Load(object sender, EventArgs e)
         {
-
+            OpenContentForm(new AdminAppForms.AdminTables(), sender);
         }
 
         private void button1_Click(object sender, EventArgs e)
