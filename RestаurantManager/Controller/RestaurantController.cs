@@ -83,7 +83,6 @@ namespace RestаurantManager.Controller
                     {
                         mealId = rdr.GetInt32(0);
                     }
-                    Console.WriteLine(mealId);
                     rdr.Close();
                     cmd.CommandText = $"UPDATE meal SET name=\"{newName}\", price={newPrice} WHERE id={mealId}";
                     cmd.ExecuteNonQuery();
@@ -180,7 +179,90 @@ namespace RestаurantManager.Controller
                 }
             }
         }
-
+        public bool AddWaiter(string name,string password,decimal salary)
+        {
+            using(dbCon)
+            {
+                try
+                {
+                    dbCon.Open();
+                    string sql = "SELECT*FROM waiter";
+                    var cmd = new MySqlCommand(sql, dbCon);
+                    MySqlDataReader rdr = cmd.ExecuteReader();
+                    List<Waiter> waiters = new List<Waiter>();
+                    while (rdr.Read())
+                    {
+                        waiters.Add(new Waiter(rdr.GetString(1),rdr.GetString(2), rdr.GetDecimal(3)));
+                    }
+                    foreach (var waiter in waiters)
+                    {
+                        if (waiter.Name.ToLower() == name.ToLower())
+                        {
+                            return false;
+                        }
+                    }
+                    rdr.Close();
+                    cmd.CommandText = $"INSERT INTO waiter (name,password,salary) values(\"{name}\",{password},{salary})";
+                    cmd.ExecuteNonQuery();
+                    dbCon.Close();
+                    return true;
+                }
+                catch (Exception error)
+                {
+                    MessageBox.Show(error.Message);
+                    return false;
+                }
+            }
+            
+        }
+        public bool RemoveWaiter(string name)
+        {
+            using (dbCon)
+            {
+                try
+                {
+                    dbCon.Open();
+                    string sql = $"DELETE FROM waiter WHERE name =\"{name}\"";
+                    var cmd = new MySqlCommand(sql, dbCon);
+                    cmd.ExecuteNonQuery();
+                    dbCon.Close();
+                    return true;
+                }
+                catch (Exception error)
+                {
+                    MessageBox.Show(error.Message);
+                    return false;
+                }
+            }
+        }
+        public bool EditWaiter(string name,string password,decimal salary,string newName,string newPassword,decimal newSalary)
+        {
+            using(dbCon)
+            {
+                try
+                {
+                    dbCon.Open();
+                    string sql = $"SELECT id FROM waiter  WHERE name=\"{name}\"";
+                    var cmd = new MySqlCommand(sql, dbCon);
+                    var rdr = cmd.ExecuteReader();
+                    int waiterId = 0;
+                    while (rdr.Read())
+                    {
+                        waiterId = rdr.GetInt32(0);
+                    }
+                    rdr.Close();
+                    cmd.CommandText = $"UPDATE waiter SET name=\"{newName}\", password={newPassword},salary={newSalary} WHERE id={waiterId}";
+                    cmd.ExecuteNonQuery();
+                    dbCon.Close();
+                    return true;
+                }
+                catch (Exception error)
+                {
+                    MessageBox.Show(error.Message);
+                    return false;
+                }
+            }
+        }
 
     }
 }

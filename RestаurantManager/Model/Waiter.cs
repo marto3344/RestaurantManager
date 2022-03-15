@@ -12,11 +12,12 @@ namespace RestаurantManager.Model
         public string Name { get; set; }
         public string Password { get; set; }
         public int Id { get; set; }
-        public Waiter(int id, string name, string password)
+        public decimal Salary { get; set; }
+        public Waiter(string name, string password,decimal salary)
         {
-            this.Id = id;
             this.Name = name;
             this.Password = password;
+            this.Salary = salary;
         }
     }
 }

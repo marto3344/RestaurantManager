@@ -78,7 +78,7 @@ namespace RestаurantManager.View.AdminAppForms
                 return;
             }
             string removedTableName = tableList.SelectedItems[0].Text;
-            DialogResult confirmRemoveBox = MessageBox.Show($"Are you sure you want to remove {removedTableName}?", "Remove meal?", MessageBoxButtons.OKCancel);
+            DialogResult confirmRemoveBox = MessageBox.Show($"Are you sure you want to remove {removedTableName}?", "Remove table?", MessageBoxButtons.OKCancel);
             if (confirmRemoveBox == DialogResult.OK)
             {
                 if (controller.RemoveTable(removedTableName))

@@ -65,7 +65,7 @@ namespace RestаurantManager.Controller
                     List<Waiter> waiters = new List<Waiter>();
                     while (rdr.Read())
                     {
-                        waiter = new Waiter(rdr.GetInt32(0), rdr.GetString(1), rdr.GetString(2));
+                        waiter = new Waiter( rdr.GetString(1), rdr.GetString(2),rdr.GetDecimal(3));
                         waiters.Add(waiter);
                     }
                     foreach (var item in waiters)

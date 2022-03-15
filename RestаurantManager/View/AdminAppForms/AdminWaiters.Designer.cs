@@ -90,6 +90,7 @@
             this.confirmEditButton.Text = "Confirm";
             this.confirmEditButton.UseVisualStyleBackColor = false;
             this.confirmEditButton.Visible = false;
+            this.confirmEditButton.Click += new System.EventHandler(this.confirmEditButton_Click);
             // 
             // addWaiterButton
             // 
@@ -145,6 +146,7 @@
             this.editWaiterButton.TabIndex = 8;
             this.editWaiterButton.Text = "Edit Waiter";
             this.editWaiterButton.UseVisualStyleBackColor = false;
+            this.editWaiterButton.Click += new System.EventHandler(this.editWaiterButton_Click);
             // 
             // removeWaiterButton
             // 
@@ -156,6 +158,7 @@
             this.removeWaiterButton.TabIndex = 7;
             this.removeWaiterButton.Text = "Remove Waiter";
             this.removeWaiterButton.UseVisualStyleBackColor = false;
+            this.removeWaiterButton.Click += new System.EventHandler(this.removeWaiterButton_Click);
             // 
             // label1
             // 
