@@ -68,5 +68,34 @@ namespace RestаurantManager.Controller
                 }
             }
         }
+        public bool EditMeal(string name,decimal price,string newName,decimal newPrice)
+        {
+            using(dbCon)
+            {
+                try
+                {
+                    dbCon.Open();
+                    string sql = $"SELECT id FROM meal  WHERE name=\"{name}\"";
+                    var cmd=new MySqlCommand(sql,dbCon);
+                    var rdr=cmd.ExecuteReader();
+                    int mealId = 0;
+                    while (rdr.Read())
+                    {
+                        mealId = rdr.GetInt32(0);
+                    }
+                    Console.WriteLine(mealId);
+                    rdr.Close();
+                    cmd.CommandText = $"UPDATE meal SET name=\"{newName}\", price={newPrice} WHERE id={mealId}";
+                    cmd.ExecuteNonQuery();
+                    dbCon.Close();
+                    return true;
+                }
+                catch (Exception error)
+                {
+                    MessageBox.Show(error.Message);
+                    return false;               
+                }
+            }
+        }
     }
 }

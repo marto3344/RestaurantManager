@@ -17,9 +17,11 @@ namespace RestаurantManager.View.AdminAppForms
     {
         private MySqlConnection dbCon = new MySqlConnection(DBConnection.GetConnectionString());
         private RestaurantController controller = new RestaurantController();
+
         public MealsForm()
         {
             InitializeComponent();
+            
         }
 
         private void removeMealButton_Click(object sender, EventArgs e)
@@ -58,12 +60,12 @@ namespace RestаurantManager.View.AdminAppForms
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)//Add meal button
         {
             string name = mealNameBox.Text;
             decimal price = decimal.Parse(mealPriceBox.Text);
             if (controller.AddMeal(name, price))
-            {              
+            {
                 ListViewItem mealItem = new ListViewItem(name);
                 mealItem.SubItems.Add($"{price:f2} lv.");
                 listView1.Items.Add(mealItem);
@@ -72,6 +74,7 @@ namespace RestаurantManager.View.AdminAppForms
                 MessageBox.Show("Meal added successfully");
             }
             else MessageBox.Show("This meal already exists!\nTry again!");
+
         }
 
         private void removeMealButton_Click_1(object sender, EventArgs e)
@@ -81,7 +84,7 @@ namespace RestаurantManager.View.AdminAppForms
                 MessageBox.Show("Please select a Meal!");
                 return;
             }
-            string removedMealName= listView1.SelectedItems[0].Text;
+            string removedMealName = listView1.SelectedItems[0].Text;
             DialogResult confirmRemoveBox = MessageBox.Show($"Are you sure you want to remove {removedMealName}?", "Remove meal?", MessageBoxButtons.OKCancel);
             if (confirmRemoveBox == DialogResult.OK)
             {
@@ -96,17 +99,48 @@ namespace RestаurantManager.View.AdminAppForms
 
         private void editMealButton_Click(object sender, EventArgs e)
         {
+            Button btnSender = (Button)sender;
             if (listView1.SelectedItems.Count == 0)
             {
                 MessageBox.Show("Please select a Meal!");
                 return;
             }
-            string preEditedName= listView1.SelectedItems[0].Text;
-            string []priceColumn=listView1.SelectedItems[0].SubItems[1].Text.Split(' ').ToArray();
-            decimal preEditedPrice=decimal.Parse(priceColumn[0]);
-            //Console.WriteLine(preEditedName);
-            //Console.WriteLine(preEditedPrice);
+            MessageBox.Show($"Please edit {listView1.SelectedItems[0].Text} in Add Meal panel!");
+            addMealBox.Text = "Edit Meal";
+            confirmEditButton.Visible = true;
+            confirmEditButton.BringToFront();
+            mealNameBox.Text = listView1.SelectedItems[0].Text;
+            mealPriceBox.Text = listView1.SelectedItems[0].SubItems[1].Text.Split(' ').First();
+        }
 
+        private void confirmEditButton_Click(object sender, EventArgs e)
+        {
+            string preEditedName = listView1.SelectedItems[0].Text;
+            string[] priceColumn = listView1.SelectedItems[0].SubItems[1].Text.Split(' ').ToArray();
+            decimal preEditedPrice = decimal.Parse(priceColumn[0]);
+            string newName = mealNameBox.Text;
+            decimal newPrice = decimal.Parse(mealPriceBox.Text);
+            if (newName == "" || newPrice <= 0 || mealPriceBox.Text == "")
+            {
+                MessageBox.Show("Please enter valid values!");
+            }
+            else
+            {
+                if (controller.EditMeal(preEditedName, preEditedPrice, newName, newPrice))
+                {
+                    listView1.SelectedItems[0].Text = newName;
+                    listView1.SelectedItems[0].SubItems[1].Text = $"{newPrice:f2} lv.";
+                    confirmEditButton.Visible = false;
+                    button2.BringToFront();
+                    mealNameBox.Clear();
+                    mealPriceBox.Clear();
+                    addMealBox.Text = "Add meal";
+                    MessageBox.Show($"Successfully edited {preEditedName} {preEditedPrice:f2} lv. to {newName} {newPrice:f2} lv. !");
+
+                }
+                else MessageBox.Show($"Error \n {preEditedName} was not edited!");
+            }
         }
     }
+
 }

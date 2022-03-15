@@ -29,7 +29,8 @@
         private void InitializeComponent()
         {
             this.mealPanel = new System.Windows.Forms.Panel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.addMealBox = new System.Windows.Forms.GroupBox();
+            this.confirmEditButton = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -42,12 +43,12 @@
             this.mealName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.mealPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.mealPanel.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.addMealBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // mealPanel
             // 
-            this.mealPanel.Controls.Add(this.groupBox1);
+            this.mealPanel.Controls.Add(this.addMealBox);
             this.mealPanel.Controls.Add(this.editMealButton);
             this.mealPanel.Controls.Add(this.removeMealButton);
             this.mealPanel.Controls.Add(this.label1);
@@ -59,19 +60,33 @@
             this.mealPanel.TabIndex = 0;
             this.mealPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mealPanel_Paint);
             // 
-            // groupBox1
+            // addMealBox
             // 
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.mealPriceBox);
-            this.groupBox1.Controls.Add(this.mealNameBox);
-            this.groupBox1.Location = new System.Drawing.Point(529, 177);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(339, 316);
-            this.groupBox1.TabIndex = 9;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Add meal ";
+            this.addMealBox.Controls.Add(this.confirmEditButton);
+            this.addMealBox.Controls.Add(this.button2);
+            this.addMealBox.Controls.Add(this.label3);
+            this.addMealBox.Controls.Add(this.label2);
+            this.addMealBox.Controls.Add(this.mealPriceBox);
+            this.addMealBox.Controls.Add(this.mealNameBox);
+            this.addMealBox.Location = new System.Drawing.Point(529, 177);
+            this.addMealBox.Name = "addMealBox";
+            this.addMealBox.Size = new System.Drawing.Size(339, 316);
+            this.addMealBox.TabIndex = 9;
+            this.addMealBox.TabStop = false;
+            this.addMealBox.Text = "Add meal ";
+            // 
+            // confirmEditButton
+            // 
+            this.confirmEditButton.BackColor = System.Drawing.Color.LimeGreen;
+            this.confirmEditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.confirmEditButton.Location = new System.Drawing.Point(6, 259);
+            this.confirmEditButton.Name = "confirmEditButton";
+            this.confirmEditButton.Size = new System.Drawing.Size(146, 50);
+            this.confirmEditButton.TabIndex = 6;
+            this.confirmEditButton.Text = "Confirm";
+            this.confirmEditButton.UseVisualStyleBackColor = false;
+            this.confirmEditButton.Visible = false;
+            this.confirmEditButton.Click += new System.EventHandler(this.confirmEditButton_Click);
             // 
             // button2
             // 
@@ -167,12 +182,11 @@
             // mealName
             // 
             this.mealName.Text = "Meal Name";
-            this.mealName.Width = 200;
+            this.mealName.Width = 192;
             // 
             // mealPrice
             // 
             this.mealPrice.Text = "Price";
-            this.mealPrice.Width = 100;
             // 
             // MealsForm
             // 
@@ -185,8 +199,8 @@
             this.Load += new System.EventHandler(this.MealsForm_Load);
             this.mealPanel.ResumeLayout(false);
             this.mealPanel.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.addMealBox.ResumeLayout(false);
+            this.addMealBox.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -194,7 +208,7 @@
         #endregion
 
         private System.Windows.Forms.Panel mealPanel;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox addMealBox;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
@@ -206,5 +220,6 @@
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ColumnHeader mealName;
         private System.Windows.Forms.ColumnHeader mealPrice;
+        private System.Windows.Forms.Button confirmEditButton;
     }
 }
