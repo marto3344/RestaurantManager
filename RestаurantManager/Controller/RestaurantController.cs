@@ -47,5 +47,26 @@ namespace RestаurantManager.Controller
                 }
             }
         }
+        public bool RemoveMeal(string name)
+        {
+            using (dbCon)
+            {
+                try
+                {
+                    dbCon.Open();
+                    string sql = $"DELETE FROM meal WHERE name =\"{name}\"";
+                    var cmd = new MySqlCommand(sql,dbCon);
+                    cmd.ExecuteNonQuery();
+                    dbCon.Close();
+                    return true;
+                    
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.Message);
+                    return false;
+                }
+            }
+        }
     }
 }

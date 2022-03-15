@@ -35,7 +35,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.mealPriceBox = new System.Windows.Forms.TextBox();
             this.mealNameBox = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.editMealButton = new System.Windows.Forms.Button();
             this.removeMealButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
@@ -48,7 +48,7 @@
             // mealPanel
             // 
             this.mealPanel.Controls.Add(this.groupBox1);
-            this.mealPanel.Controls.Add(this.button1);
+            this.mealPanel.Controls.Add(this.editMealButton);
             this.mealPanel.Controls.Add(this.removeMealButton);
             this.mealPanel.Controls.Add(this.label1);
             this.mealPanel.Controls.Add(this.listView1);
@@ -117,16 +117,17 @@
             this.mealNameBox.Size = new System.Drawing.Size(294, 22);
             this.mealNameBox.TabIndex = 0;
             // 
-            // button1
+            // editMealButton
             // 
-            this.button1.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(275, 443);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(154, 50);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Edit Meal";
-            this.button1.UseVisualStyleBackColor = false;
+            this.editMealButton.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.editMealButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.editMealButton.Location = new System.Drawing.Point(275, 443);
+            this.editMealButton.Name = "editMealButton";
+            this.editMealButton.Size = new System.Drawing.Size(154, 50);
+            this.editMealButton.TabIndex = 8;
+            this.editMealButton.Text = "Edit Meal";
+            this.editMealButton.UseVisualStyleBackColor = false;
+            this.editMealButton.Click += new System.EventHandler(this.editMealButton_Click);
             // 
             // removeMealButton
             // 
@@ -138,6 +139,7 @@
             this.removeMealButton.TabIndex = 7;
             this.removeMealButton.Text = "Remove Meal";
             this.removeMealButton.UseVisualStyleBackColor = false;
+            this.removeMealButton.Click += new System.EventHandler(this.removeMealButton_Click_1);
             // 
             // label1
             // 
@@ -198,7 +200,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox mealPriceBox;
         private System.Windows.Forms.TextBox mealNameBox;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button editMealButton;
         private System.Windows.Forms.Button removeMealButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListView listView1;

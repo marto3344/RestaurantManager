@@ -47,7 +47,7 @@ namespace RestаurantManager.View.AdminAppForms
                     {
                         meal = new Meal(rdr.GetString(1), rdr.GetDecimal(2));
                         ListViewItem mealItem = new ListViewItem(meal.Name);
-                        mealItem.SubItems.Add(meal.Price.ToString());
+                        mealItem.SubItems.Add($"{meal.Price:f2} lv.");
                         listView1.Items.Add(mealItem);
                     }
                 }
@@ -63,14 +63,50 @@ namespace RestаurantManager.View.AdminAppForms
             string name = mealNameBox.Text;
             decimal price = decimal.Parse(mealPriceBox.Text);
             if (controller.AddMeal(name, price))
-            {
-                MessageBox.Show("Meal added successfully");
+            {              
                 ListViewItem mealItem = new ListViewItem(name);
-                mealItem.SubItems.Add(price.ToString());
+                mealItem.SubItems.Add($"{price:f2} lv.");
                 listView1.Items.Add(mealItem);
+                mealNameBox.Clear();
+                mealPriceBox.Clear();
+                MessageBox.Show("Meal added successfully");
             }
             else MessageBox.Show("This meal already exists!\nTry again!");
         }
 
+        private void removeMealButton_Click_1(object sender, EventArgs e)
+        {
+            if (listView1.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Please select a Meal!");
+                return;
+            }
+            string removedMealName= listView1.SelectedItems[0].Text;
+            DialogResult confirmRemoveBox = MessageBox.Show($"Are you sure you want to remove {removedMealName}?", "Remove meal?", MessageBoxButtons.OKCancel);
+            if (confirmRemoveBox == DialogResult.OK)
+            {
+                if (controller.RemoveMeal(removedMealName))
+                {
+                    listView1.SelectedItems[0].Remove();
+                    MessageBox.Show($"{removedMealName} removed successfully!");
+                }
+                else MessageBox.Show("Error! \n Meal was not removed!");
+            }
+        }
+
+        private void editMealButton_Click(object sender, EventArgs e)
+        {
+            if (listView1.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Please select a Meal!");
+                return;
+            }
+            string preEditedName= listView1.SelectedItems[0].Text;
+            string []priceColumn=listView1.SelectedItems[0].SubItems[1].Text.Split(' ').ToArray();
+            decimal preEditedPrice=decimal.Parse(priceColumn[0]);
+            //Console.WriteLine(preEditedName);
+            //Console.WriteLine(preEditedPrice);
+
+        }
     }
 }
