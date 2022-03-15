@@ -134,6 +134,11 @@ namespace RestаurantManager.View
         private void TablesButton_Click(object sender, EventArgs e)
         {
             OpenContentForm(new AdminAppForms.AdminTables(),sender);
-        }   
+        }
+
+        private void ViewWaitersButton_Click(object sender, EventArgs e)
+        {
+            OpenContentForm(new AdminAppForms.AdminWaiters(),sender);
+        }
     }
 }

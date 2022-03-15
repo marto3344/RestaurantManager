@@ -64,6 +64,7 @@ namespace RestаurantManager.View.AdminAppForms
         {
             string name = mealNameBox.Text;
             decimal price = decimal.Parse(mealPriceBox.Text);
+            Console.WriteLine(price);
             if (controller.AddMeal(name, price))
             {
                 ListViewItem mealItem = new ListViewItem(name);

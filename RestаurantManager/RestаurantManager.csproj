@@ -132,6 +132,9 @@
     <EmbeddedResource Include="View\AdminAppForms\AdminTables.resx">
       <DependentUpon>AdminTables.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\AdminAppForms\AdminWaiters.resx">
+      <DependentUpon>AdminWaiters.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\AdminAppForms\MealsForm.resx">
       <DependentUpon>MealsForm.cs</DependentUpon>
     </EmbeddedResource>

@@ -97,6 +97,7 @@
             this.ViewWaitersButton.TabIndex = 3;
             this.ViewWaitersButton.Text = "View Waiters";
             this.ViewWaitersButton.UseVisualStyleBackColor = false;
+            this.ViewWaitersButton.Click += new System.EventHandler(this.ViewWaitersButton_Click);
             this.ViewWaitersButton.Enter += new System.EventHandler(this.ViewWaitersButton_Enter);
             this.ViewWaitersButton.Leave += new System.EventHandler(this.ViewWaitersButton_Leave);
             // 
