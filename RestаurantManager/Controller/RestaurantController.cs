@@ -12,7 +12,7 @@ namespace RestаurantManager.Controller
     public class RestaurantController
     {
         private MySqlConnection dbCon = new MySqlConnection(DBConnection.GetConnectionString());
-        public  bool AddMeal(string name,decimal price)
+        public bool AddMeal(string name, decimal price)
         {
             using (dbCon)
             {
@@ -25,11 +25,11 @@ namespace RestаurantManager.Controller
                     List<Meal> meals = new List<Meal>();
                     while (rdr.Read())
                     {
-                        meals.Add(new Meal(rdr.GetString(1),rdr.GetDecimal(2)));
+                        meals.Add(new Meal(rdr.GetString(1), rdr.GetDecimal(2)));
                     }
                     foreach (var meal in meals)
                     {
-                        if(meal.Name.ToLower()==name.ToLower())
+                        if (meal.Name.ToLower() == name.ToLower())
                         {
                             return false;
                         }
@@ -55,11 +55,11 @@ namespace RestаurantManager.Controller
                 {
                     dbCon.Open();
                     string sql = $"DELETE FROM meal WHERE name =\"{name}\"";
-                    var cmd = new MySqlCommand(sql,dbCon);
+                    var cmd = new MySqlCommand(sql, dbCon);
                     cmd.ExecuteNonQuery();
                     dbCon.Close();
                     return true;
-                    
+
                 }
                 catch (Exception e)
                 {
@@ -68,16 +68,16 @@ namespace RestаurantManager.Controller
                 }
             }
         }
-        public bool EditMeal(string name,decimal price,string newName,decimal newPrice)
+        public bool EditMeal(string name, decimal price, string newName, decimal newPrice)
         {
-            using(dbCon)
+            using (dbCon)
             {
                 try
                 {
                     dbCon.Open();
                     string sql = $"SELECT id FROM meal  WHERE name=\"{name}\"";
-                    var cmd=new MySqlCommand(sql,dbCon);
-                    var rdr=cmd.ExecuteReader();
+                    var cmd = new MySqlCommand(sql, dbCon);
+                    var rdr = cmd.ExecuteReader();
                     int mealId = 0;
                     while (rdr.Read())
                     {
@@ -93,9 +93,94 @@ namespace RestаurantManager.Controller
                 catch (Exception error)
                 {
                     MessageBox.Show(error.Message);
-                    return false;               
+                    return false;
                 }
             }
         }
+        public bool AddTable(string name)
+        {
+            using (dbCon)
+            {
+                try
+                {
+                    dbCon.Open();
+                    string sql = "SELECT*FROM waiter";
+                    var cmd = new MySqlCommand(sql, dbCon);
+                    MySqlDataReader rdr = cmd.ExecuteReader();
+                    List<Table> tables = new List<Table>();
+                    while (rdr.Read())
+                    {
+                        tables.Add(new Table(rdr.GetString(1)));
+                    }
+                    foreach (var table in tables)
+                    {
+                        if (table.Name.ToLower() == name.ToLower())
+                        {
+                            return false;
+                        }
+                    }
+                    rdr.Close();
+                    cmd.CommandText = $"INSERT INTO diner_table (name) values(\"{name}\")";
+                    cmd.ExecuteNonQuery();
+                    dbCon.Close();
+                    return true;
+                }
+                catch (Exception error)
+                {
+                    MessageBox.Show(error.Message);
+                    return false;
+                }
+            }
+        }
+        public bool RemoveTable(string name)
+        {
+            using (dbCon)
+            {
+                try
+                {
+                    dbCon.Open();
+                    string sql = $"DELETE FROM diner_table WHERE name =\"{name}\"";
+                    var cmd = new MySqlCommand(sql, dbCon);
+                    cmd.ExecuteNonQuery();
+                    dbCon.Close();
+                    return true;
+                }
+                catch (Exception error)
+                {
+                    MessageBox.Show(error.Message);
+                    return false;
+                }
+            }
+        }
+        public bool EditTable(string name, string newName)
+        {
+            using(dbCon)
+            {
+                try
+                {
+                    dbCon.Open();
+                    string sql = $"SELECT id FROM diner_table  WHERE name=\"{name}\"";
+                    var cmd = new MySqlCommand(sql, dbCon);
+                    var rdr = cmd.ExecuteReader();
+                    int tableId = 0;
+                    while (rdr.Read())
+                    {
+                        tableId = rdr.GetInt32(0);
+                    }
+                    rdr.Close();
+                    cmd.CommandText = $"UPDATE meal SET name=\"{newName}\" WHERE id={tableId}";
+                    cmd.ExecuteNonQuery();
+                    dbCon.Close();
+                    return true;
+                }
+                catch (Exception error)
+                {
+                    MessageBox.Show(error.Message);
+                    return false;
+                }
+            }
+        }
+
+
     }
 }

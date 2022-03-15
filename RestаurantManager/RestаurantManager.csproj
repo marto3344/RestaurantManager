@@ -72,6 +72,7 @@
     <Compile Include="Controller\UserAuthenticationService.cs" />
     <Compile Include="Model\Admin.cs" />
     <Compile Include="Model\Meal.cs" />
+    <Compile Include="Model\Table.cs" />
     <Compile Include="Model\Waiter.cs" />
     <Compile Include="View\AdminApp.cs">
       <SubType>Form</SubType>

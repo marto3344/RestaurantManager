@@ -16,5 +16,10 @@ namespace RestаurantManager.View.AdminAppForms
         {
             InitializeComponent();
         }
+
+        private void addWaiterButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

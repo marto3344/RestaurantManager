@@ -80,6 +80,7 @@
             this.confirmEditButton.Text = "Confirm";
             this.confirmEditButton.UseVisualStyleBackColor = false;
             this.confirmEditButton.Visible = false;
+            this.confirmEditButton.Click += new System.EventHandler(this.confirmEditButton_Click);
             // 
             // addTableButton
             // 
@@ -119,6 +120,7 @@
             this.editMealButton.TabIndex = 8;
             this.editMealButton.Text = "Edit Table";
             this.editMealButton.UseVisualStyleBackColor = false;
+            this.editMealButton.Click += new System.EventHandler(this.editMealButton_Click);
             // 
             // removeTableButton
             // 
@@ -130,6 +132,7 @@
             this.removeTableButton.TabIndex = 7;
             this.removeTableButton.Text = "Remove Table";
             this.removeTableButton.UseVisualStyleBackColor = false;
+            this.removeTableButton.Click += new System.EventHandler(this.removeTableButton_Click);
             // 
             // label1
             // 

@@ -92,7 +92,7 @@ namespace RestаurantManager.View.AdminAppForms
                 if (controller.RemoveMeal(removedMealName))
                 {
                     listView1.SelectedItems[0].Remove();
-                    MessageBox.Show($"{removedMealName} removed successfully!");
+                    MessageBox.Show($"{removedMealName} was removed successfully!");
                 }
                 else MessageBox.Show("Error! \n Meal was not removed!");
             }
@@ -100,7 +100,7 @@ namespace RestаurantManager.View.AdminAppForms
 
         private void editMealButton_Click(object sender, EventArgs e)
         {
-            Button btnSender = (Button)sender;
+         
             if (listView1.SelectedItems.Count == 0)
             {
                 MessageBox.Show("Please select a Meal!");
