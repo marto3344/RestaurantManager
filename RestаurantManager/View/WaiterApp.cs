@@ -62,7 +62,8 @@ namespace RestаurantManager.View
 
         private void MenuButton_Click(object sender, EventArgs e)
         {
-            OpenContentForm(new WaiterAppForms.ViewMenu(),sender);
+           WaiterAppForms.ViewMenu menu=new WaiterAppForms.ViewMenu();
+            menu.ShowDialog();
         }
 
         private void TablesButton_Click(object sender, EventArgs e)
@@ -72,7 +73,8 @@ namespace RestаurantManager.View
 
         private void ViewSalaryButton_Click(object sender, EventArgs e)
         {
-            OpenContentForm(new WaiterAppForms.ViewSalaryForm(),sender);
+            WaiterAppForms.ViewSalaryForm salary=new  WaiterAppForms.ViewSalaryForm();
+            salary.ShowDialog();
         }
     }
 }
