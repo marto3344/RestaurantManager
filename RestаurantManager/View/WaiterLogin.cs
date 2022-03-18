@@ -36,8 +36,9 @@ namespace RestаurantManager.View
             string waiterPassword = PasswordBox.Text;
             if (UserAuthenticationService.CheckAdminLogin(waiterName, waiterPassword))
             {
+                WaiterApp waiterApp = new WaiterApp();
                 this.Hide();
-                MessageBox.Show("Successful login as admin");
+                waiterApp.Show();
             }
             else
             {

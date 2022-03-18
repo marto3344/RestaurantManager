@@ -112,6 +112,30 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\WaiterApp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\WaiterApp.Designer.cs">
+      <DependentUpon>WaiterApp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\WaiterAppForms\TablesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\WaiterAppForms\TablesForm.Designer.cs">
+      <DependentUpon>TablesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\WaiterAppForms\ViewMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\WaiterAppForms\ViewMenu.Designer.cs">
+      <DependentUpon>ViewMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\WaiterAppForms\ViewSalaryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\WaiterAppForms\ViewSalaryForm.Designer.cs">
+      <DependentUpon>ViewSalaryForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\WaiterLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,6 +168,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\WaiterApp.resx">
+      <DependentUpon>WaiterApp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\WaiterAppForms\ViewMenu.resx">
+      <DependentUpon>ViewMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\WaiterLogin.resx">
       <DependentUpon>WaiterLogin.cs</DependentUpon>
