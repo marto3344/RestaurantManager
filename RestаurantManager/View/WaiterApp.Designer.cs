@@ -101,6 +101,7 @@
             this.ViewSalaryButton.TabIndex = 3;
             this.ViewSalaryButton.Text = "View Salary";
             this.ViewSalaryButton.UseVisualStyleBackColor = false;
+            this.ViewSalaryButton.Click += new System.EventHandler(this.ViewSalaryButton_Click);
             // 
             // MenuButton
             // 
@@ -113,6 +114,7 @@
             this.MenuButton.TabIndex = 2;
             this.MenuButton.Text = "View Menu";
             this.MenuButton.UseVisualStyleBackColor = false;
+            this.MenuButton.Click += new System.EventHandler(this.MenuButton_Click);
             // 
             // TablesButton
             // 
@@ -125,6 +127,7 @@
             this.TablesButton.TabIndex = 1;
             this.TablesButton.Text = "Tables";
             this.TablesButton.UseVisualStyleBackColor = false;
+            this.TablesButton.Click += new System.EventHandler(this.TablesButton_Click);
             // 
             // LogoPanel
             // 
@@ -155,6 +158,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "WaiterApp";
             this.Text = "WaiterApp";
+            this.Load += new System.EventHandler(this.WaiterApp_Load);
             this.SideNavPanel.ResumeLayout(false);
             this.LogoPanel.ResumeLayout(false);
             this.ResumeLayout(false);

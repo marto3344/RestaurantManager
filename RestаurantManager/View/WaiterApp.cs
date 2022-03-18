@@ -12,6 +12,8 @@ namespace RestаurantManager.View
 {
     public partial class WaiterApp : Form
     {
+        private Form activeForm;
+
         public WaiterApp()
         {
             InitializeComponent();
@@ -35,6 +37,42 @@ namespace RestаurantManager.View
             {
                 Application.Exit();
             }
+        }
+
+        private void WaiterApp_Load(object sender, EventArgs e)
+        {
+            OpenContentForm(new WaiterAppForms.TablesForm(),sender);
+        }
+        private void OpenContentForm(Form contentForm, object btnSender)
+        {
+            if (activeForm != null)
+            {
+                activeForm.Close();
+            }
+            activeForm = contentForm;
+            contentForm.TopLevel = false;
+            contentForm.FormBorderStyle = FormBorderStyle.None;
+            contentForm.Dock = DockStyle.Fill;
+            this.contentPanel.Controls.Add(contentForm);
+            this.contentPanel.Tag = contentForm;
+            contentForm.BringToFront();
+            contentForm.Show();
+
+        }
+
+        private void MenuButton_Click(object sender, EventArgs e)
+        {
+            OpenContentForm(new WaiterAppForms.ViewMenu(),sender);
+        }
+
+        private void TablesButton_Click(object sender, EventArgs e)
+        {
+            OpenContentForm(new WaiterAppForms.TablesForm(),sender);
+        }
+
+        private void ViewSalaryButton_Click(object sender, EventArgs e)
+        {
+            OpenContentForm(new WaiterAppForms.ViewSalaryForm(),sender);
         }
     }
 }
