@@ -172,8 +172,14 @@
     <EmbeddedResource Include="View\WaiterApp.resx">
       <DependentUpon>WaiterApp.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\WaiterAppForms\TablesForm.resx">
+      <DependentUpon>TablesForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\WaiterAppForms\ViewMenu.resx">
       <DependentUpon>ViewMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\WaiterAppForms\ViewSalaryForm.resx">
+      <DependentUpon>ViewSalaryForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\WaiterLogin.resx">
       <DependentUpon>WaiterLogin.cs</DependentUpon>

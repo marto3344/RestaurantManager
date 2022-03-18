@@ -19,5 +19,6 @@ namespace RestаurantManager.Model
             this.Password = password;
             this.Salary = salary;
         }
+        
     }
 }

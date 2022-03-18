@@ -1,4 +1,5 @@
 ﻿using RestаurantManager.Controller;
+using RestаurantManager.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,8 @@ namespace RestаurantManager.View
 {
     public partial class WaiterLogin : Form
     {
+        public static string _waiterName = "";
+        public  static string _waiterPassword = "";
         public WaiterLogin()
         {
             InitializeComponent();
@@ -38,6 +41,8 @@ namespace RestаurantManager.View
             {
                 WaiterApp waiterApp = new WaiterApp();
                 this.Hide();
+                WaiterLogin._waiterName= waiterName;
+                WaiterLogin._waiterPassword= waiterPassword;
                 waiterApp.Show();
             }
             else
@@ -51,5 +56,6 @@ namespace RestаurantManager.View
         {
 
         }
+       
     }
 }
