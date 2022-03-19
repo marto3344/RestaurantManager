@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WaiterLogin));
             this.WaiterLoginButton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.PasswordBox = new System.Windows.Forms.TextBox();
@@ -106,6 +107,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.WaiterLoginButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "WaiterLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

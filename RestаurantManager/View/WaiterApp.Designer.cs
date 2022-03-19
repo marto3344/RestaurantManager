@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WaiterApp));
             this.contentPanel = new System.Windows.Forms.Panel();
             this.SideNavPanel = new System.Windows.Forms.Panel();
             this.ExitButton = new System.Windows.Forms.Button();
@@ -156,6 +157,7 @@
             this.Controls.Add(this.contentPanel);
             this.Controls.Add(this.SideNavPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "WaiterApp";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

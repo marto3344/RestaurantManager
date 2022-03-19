@@ -131,5 +131,7 @@ namespace RestаurantManager.View
         {
             OpenContentForm(new AdminAppForms.AdminWaiters(),sender);
         }
+
+       
     }
 }
