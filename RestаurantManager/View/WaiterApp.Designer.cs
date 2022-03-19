@@ -38,8 +38,10 @@
             this.TablesButton = new System.Windows.Forms.Button();
             this.LogoPanel = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.SideNavPanel.SuspendLayout();
             this.LogoPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // contentPanel
@@ -133,6 +135,7 @@
             // LogoPanel
             // 
             this.LogoPanel.BackColor = System.Drawing.Color.Lavender;
+            this.LogoPanel.Controls.Add(this.pictureBox1);
             this.LogoPanel.Controls.Add(this.label1);
             this.LogoPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.LogoPanel.Location = new System.Drawing.Point(0, 0);
@@ -148,6 +151,16 @@
             this.label1.Size = new System.Drawing.Size(223, 40);
             this.label1.TabIndex = 0;
             this.label1.Text = "Restaurant Manager Pro";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(18, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(64, 64);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
             // 
             // WaiterApp
             // 
@@ -165,6 +178,7 @@
             this.Load += new System.EventHandler(this.WaiterApp_Load);
             this.SideNavPanel.ResumeLayout(false);
             this.LogoPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -180,5 +194,6 @@
         private System.Windows.Forms.Button TablesButton;
         private System.Windows.Forms.Panel LogoPanel;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

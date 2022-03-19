@@ -38,8 +38,10 @@
             this.LogoPanel = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.contentPanel = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.SideNavPanel.SuspendLayout();
             this.LogoPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // SideNavPanel
@@ -136,6 +138,7 @@
             // LogoPanel
             // 
             this.LogoPanel.BackColor = System.Drawing.Color.Lavender;
+            this.LogoPanel.Controls.Add(this.pictureBox1);
             this.LogoPanel.Controls.Add(this.label1);
             this.LogoPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.LogoPanel.Location = new System.Drawing.Point(0, 0);
@@ -160,6 +163,16 @@
             this.contentPanel.Size = new System.Drawing.Size(1002, 673);
             this.contentPanel.TabIndex = 1;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(18, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(64, 64);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
+            // 
             // AdminApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -178,6 +191,7 @@
             this.Load += new System.EventHandler(this.AdminApp_Load);
             this.SideNavPanel.ResumeLayout(false);
             this.LogoPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -193,5 +207,6 @@
         private System.Windows.Forms.Button SwitchAccountButton;
         private System.Windows.Forms.Button ViewWaitersButton;
         private System.Windows.Forms.Panel contentPanel;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
