@@ -71,28 +71,33 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(28, 487);
+            this.button1.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(12, 491);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(125, 25);
+            this.button1.Size = new System.Drawing.Size(130, 50);
             this.button1.TabIndex = 3;
             this.button1.Text = "Back";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // AdminLoginButton
             // 
+            this.AdminLoginButton.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.AdminLoginButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AdminLoginButton.Location = new System.Drawing.Point(352, 306);
             this.AdminLoginButton.Name = "AdminLoginButton";
             this.AdminLoginButton.Size = new System.Drawing.Size(250, 50);
             this.AdminLoginButton.TabIndex = 2;
             this.AdminLoginButton.Text = "Login";
-            this.AdminLoginButton.UseVisualStyleBackColor = true;
+            this.AdminLoginButton.UseVisualStyleBackColor = false;
             this.AdminLoginButton.Click += new System.EventHandler(this.AdminLoginButton_Click);
             // 
             // AdminLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(1006, 553);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -100,6 +105,7 @@
             this.Controls.Add(this.AdminPasswordBox);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.AdminLoginButton);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "AdminLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

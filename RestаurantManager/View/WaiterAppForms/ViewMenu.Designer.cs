@@ -37,12 +37,13 @@
             // 
             // MenuBox
             // 
+            this.MenuBox.BackColor = System.Drawing.Color.LightSteelBlue;
             this.MenuBox.Controls.Add(this.menuList);
             this.MenuBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MenuBox.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.MenuBox.Location = new System.Drawing.Point(0, 0);
             this.MenuBox.Name = "MenuBox";
-            this.MenuBox.Size = new System.Drawing.Size(800, 450);
+            this.MenuBox.Size = new System.Drawing.Size(804, 597);
             this.MenuBox.TabIndex = 0;
             this.MenuBox.TabStop = false;
             this.MenuBox.Text = "Menu";
@@ -58,7 +59,7 @@
             this.menuList.HideSelection = false;
             this.menuList.Location = new System.Drawing.Point(3, 39);
             this.menuList.Name = "menuList";
-            this.menuList.Size = new System.Drawing.Size(794, 408);
+            this.menuList.Size = new System.Drawing.Size(798, 555);
             this.menuList.TabIndex = 6;
             this.menuList.UseCompatibleStateImageBehavior = false;
             this.menuList.View = System.Windows.Forms.View.Details;
@@ -77,10 +78,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(804, 597);
             this.Controls.Add(this.MenuBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "ViewMenu";
-            this.Text = "ViewMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Restaurant Manager Pro";
             this.Load += new System.EventHandler(this.ViewMenu_Load);
             this.MenuBox.ResumeLayout(false);
             this.ResumeLayout(false);

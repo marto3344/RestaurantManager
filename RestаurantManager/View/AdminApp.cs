@@ -16,16 +16,7 @@ namespace RestаurantManager.View
         public AdminApp()
         {
             InitializeComponent();
-            TablesButton.MouseEnter += TablesButton_Enter;
-            TablesButton.MouseLeave += TablesButton_Leave;
-            MealsButton.MouseEnter += MealsButton_Enter;
-            MealsButton.MouseLeave += MealsButton_Leave;
-            ViewWaitersButton.MouseEnter += ViewWaitersButton_Enter;
-            ViewWaitersButton.MouseLeave += ViewWaitersButton_Leave;
-            ExitButton.MouseEnter += ExitButton_Enter;
-            ExitButton.MouseLeave += ExitButton_Leave;
-            SwitchAccountButton.MouseEnter += SwitchAccountButton_Enter;
-            SwitchAccountButton.MouseLeave += SwitchAccountButton_Leave;
+            
         }
 
         private void AdminApp_Load(object sender, EventArgs e)
@@ -66,52 +57,52 @@ namespace RestаurantManager.View
         //Button Hover animation
         private void TablesButton_Enter(object sender, EventArgs e)
         {
-            TablesButton.BackColor = Color.DeepSkyBlue;
+            //TablesButton.BackColor = Color.DeepSkyBlue;
         }
 
         private void TablesButton_Leave(object sender, EventArgs e)
         {
-            TablesButton.BackColor = Color.DeepSkyBlue;
+            //TablesButton.BackColor = Color.DeepSkyBlue;
         }
 
         private void MealsButton_Enter(object sender, EventArgs e)
         {
-            MealsButton.BackColor=Color.RoyalBlue;
+            //MealsButton.BackColor=Color.RoyalBlue;
         }
 
         private void MealsButton_Leave(object sender, EventArgs e)
         {
-            MealsButton.BackColor = Color.DeepSkyBlue;
+            //MealsButton.BackColor = Color.DeepSkyBlue;
         }
 
         private void ViewWaitersButton_Enter(object sender, EventArgs e)
         {
-            ViewWaitersButton.BackColor = Color.RoyalBlue;
+            //ViewWaitersButton.BackColor = Color.RoyalBlue;
         }
 
         private void ViewWaitersButton_Leave(object sender, EventArgs e)
         {
-            ViewWaitersButton.BackColor = Color.DeepSkyBlue;
+            //ViewWaitersButton.BackColor = Color.DeepSkyBlue;
         }
 
         private void ExitButton_Enter(object sender, EventArgs e)
         {
-            ExitButton.BackColor = Color.RoyalBlue;
+            //ExitButton.BackColor = Color.RoyalBlue;
         }
 
         private void ExitButton_Leave(object sender, EventArgs e)
         {
-            ExitButton.BackColor= Color.DeepSkyBlue;
+            //ExitButton.BackColor= Color.DeepSkyBlue;
         }
 
         private void SwitchAccountButton_Enter(object sender, EventArgs e)
         {
-            SwitchAccountButton.BackColor = Color.RoyalBlue;
+            //SwitchAccountButton.BackColor = Color.RoyalBlue;
         }
 
         private void SwitchAccountButton_Leave(object sender, EventArgs e)
         {
-            SwitchAccountButton.BackColor= Color.DeepSkyBlue;
+            //SwitchAccountButton.BackColor= Color.DeepSkyBlue;
         }
         private void OpenContentForm(Form contentForm,object btnSender)
         {

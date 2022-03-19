@@ -45,6 +45,7 @@
             // 
             // mealPanel
             // 
+            this.mealPanel.BackColor = System.Drawing.Color.LightSteelBlue;
             this.mealPanel.Controls.Add(this.addTableBox);
             this.mealPanel.Controls.Add(this.editMealButton);
             this.mealPanel.Controls.Add(this.removeTableButton);

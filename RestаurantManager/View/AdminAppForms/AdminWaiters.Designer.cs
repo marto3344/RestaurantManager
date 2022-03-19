@@ -30,6 +30,8 @@
         {
             this.mealPanel = new System.Windows.Forms.Panel();
             this.addWaiterBox = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.waiterSalaryBox = new System.Windows.Forms.TextBox();
             this.confirmEditButton = new System.Windows.Forms.Button();
             this.addWaiterButton = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -42,8 +44,6 @@
             this.waitersList = new System.Windows.Forms.ListView();
             this.waiterName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.mealPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.waiterSalaryBox = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.waiterSalary = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.mealPanel.SuspendLayout();
             this.addWaiterBox.SuspendLayout();
@@ -51,6 +51,7 @@
             // 
             // mealPanel
             // 
+            this.mealPanel.BackColor = System.Drawing.Color.LightSteelBlue;
             this.mealPanel.Controls.Add(this.addWaiterBox);
             this.mealPanel.Controls.Add(this.editWaiterButton);
             this.mealPanel.Controls.Add(this.removeWaiterButton);
@@ -78,6 +79,22 @@
             this.addWaiterBox.TabIndex = 9;
             this.addWaiterBox.TabStop = false;
             this.addWaiterBox.Text = "Add waiter to the system";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(10, 166);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(46, 16);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Salary";
+            // 
+            // waiterSalaryBox
+            // 
+            this.waiterSalaryBox.Location = new System.Drawing.Point(6, 188);
+            this.waiterSalaryBox.Name = "waiterSalaryBox";
+            this.waiterSalaryBox.Size = new System.Drawing.Size(294, 22);
+            this.waiterSalaryBox.TabIndex = 7;
             // 
             // confirmEditButton
             // 
@@ -193,22 +210,6 @@
             // 
             this.mealPrice.Text = "Password";
             this.mealPrice.Width = 155;
-            // 
-            // waiterSalaryBox
-            // 
-            this.waiterSalaryBox.Location = new System.Drawing.Point(6, 188);
-            this.waiterSalaryBox.Name = "waiterSalaryBox";
-            this.waiterSalaryBox.Size = new System.Drawing.Size(294, 22);
-            this.waiterSalaryBox.TabIndex = 7;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(10, 166);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 16);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Salary";
             // 
             // waiterSalary
             // 

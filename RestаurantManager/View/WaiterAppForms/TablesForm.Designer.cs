@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.contentPanel = new System.Windows.Forms.Panel();
+            this.undoButton = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.mealBox = new System.Windows.Forms.ComboBox();
             this.quantityBox = new System.Windows.Forms.TextBox();
@@ -39,12 +40,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.addMeal = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.undoButton = new System.Windows.Forms.Button();
             this.contentPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // contentPanel
             // 
+            this.contentPanel.BackColor = System.Drawing.Color.LightSteelBlue;
             this.contentPanel.Controls.Add(this.undoButton);
             this.contentPanel.Controls.Add(this.label3);
             this.contentPanel.Controls.Add(this.mealBox);
@@ -61,6 +62,18 @@
             this.contentPanel.Name = "contentPanel";
             this.contentPanel.Size = new System.Drawing.Size(800, 450);
             this.contentPanel.TabIndex = 0;
+            // 
+            // undoButton
+            // 
+            this.undoButton.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.undoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.undoButton.Location = new System.Drawing.Point(36, 389);
+            this.undoButton.Name = "undoButton";
+            this.undoButton.Size = new System.Drawing.Size(180, 42);
+            this.undoButton.TabIndex = 13;
+            this.undoButton.Text = "Undo";
+            this.undoButton.UseVisualStyleBackColor = false;
+            this.undoButton.Click += new System.EventHandler(this.undoButton_Click);
             // 
             // label3
             // 
@@ -157,18 +170,6 @@
             this.label1.Size = new System.Drawing.Size(200, 45);
             this.label1.TabIndex = 1;
             this.label1.Text = "Select table";
-            // 
-            // undoButton
-            // 
-            this.undoButton.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.undoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.undoButton.Location = new System.Drawing.Point(36, 389);
-            this.undoButton.Name = "undoButton";
-            this.undoButton.Size = new System.Drawing.Size(180, 42);
-            this.undoButton.TabIndex = 13;
-            this.undoButton.Text = "Undo";
-            this.undoButton.UseVisualStyleBackColor = false;
-            this.undoButton.Click += new System.EventHandler(this.undoButton_Click);
             // 
             // TablesForm
             // 

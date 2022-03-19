@@ -38,22 +38,26 @@
             // 
             // WaiterLoginButton
             // 
+            this.WaiterLoginButton.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.WaiterLoginButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.WaiterLoginButton.Location = new System.Drawing.Point(362, 320);
             this.WaiterLoginButton.Name = "WaiterLoginButton";
             this.WaiterLoginButton.Size = new System.Drawing.Size(250, 50);
             this.WaiterLoginButton.TabIndex = 2;
             this.WaiterLoginButton.Text = "Login";
-            this.WaiterLoginButton.UseVisualStyleBackColor = true;
+            this.WaiterLoginButton.UseVisualStyleBackColor = false;
             this.WaiterLoginButton.Click += new System.EventHandler(this.WaiterLoginButton_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(38, 501);
+            this.button1.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(12, 491);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(125, 25);
+            this.button1.Size = new System.Drawing.Size(125, 50);
             this.button1.TabIndex = 3;
             this.button1.Text = "Back";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // PasswordBox
@@ -93,14 +97,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1002, 549);
+            this.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.ClientSize = new System.Drawing.Size(1006, 553);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.WaiterNameBox);
             this.Controls.Add(this.PasswordBox);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.WaiterLoginButton);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "WaiterLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

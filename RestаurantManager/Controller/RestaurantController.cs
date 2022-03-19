@@ -12,6 +12,12 @@ namespace RestаurantManager.Controller
     public class RestaurantController
     {
         private MySqlConnection dbCon = new MySqlConnection(DBConnection.GetConnectionString());
+        public void Start()
+        {
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new LoginForm());
+        }
         public bool AddMeal(string name, decimal price)
         {
             using (dbCon)

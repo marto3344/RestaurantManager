@@ -56,37 +56,41 @@
             // 
             // WaiterButton
             // 
+            this.WaiterButton.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.WaiterButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.WaiterButton.Location = new System.Drawing.Point(375, 237);
             this.WaiterButton.Name = "WaiterButton";
             this.WaiterButton.Size = new System.Drawing.Size(250, 50);
             this.WaiterButton.TabIndex = 0;
             this.WaiterButton.Text = "Waiter";
-            this.WaiterButton.UseVisualStyleBackColor = true;
+            this.WaiterButton.UseVisualStyleBackColor = false;
             this.WaiterButton.Click += new System.EventHandler(this.WaiterButton_Click);
             // 
             // AdminButton
             // 
+            this.AdminButton.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.AdminButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AdminButton.Location = new System.Drawing.Point(375, 330);
             this.AdminButton.Name = "AdminButton";
             this.AdminButton.Size = new System.Drawing.Size(250, 50);
             this.AdminButton.TabIndex = 1;
             this.AdminButton.Text = "Admin";
-            this.AdminButton.UseVisualStyleBackColor = true;
+            this.AdminButton.UseVisualStyleBackColor = false;
             this.AdminButton.Click += new System.EventHandler(this.AdminButton_Click);
             // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1002, 549);
+            this.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.ClientSize = new System.Drawing.Size(1006, 553);
             this.Controls.Add(this.AdminButton);
             this.Controls.Add(this.WaiterButton);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ForeColor = System.Drawing.Color.Black;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

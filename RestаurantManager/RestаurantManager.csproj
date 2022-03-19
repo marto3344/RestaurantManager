@@ -69,6 +69,7 @@
   <ItemGroup>
     <Compile Include="Controller\DBConnection.cs" />
     <Compile Include="Controller\RestaurantController.cs" />
+    <Compile Include="Controller\StartUp.cs" />
     <Compile Include="Controller\UserAuthenticationService.cs" />
     <Compile Include="Model\Admin.cs" />
     <Compile Include="Model\Meal.cs" />

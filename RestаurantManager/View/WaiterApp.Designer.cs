@@ -155,9 +155,11 @@
             this.ClientSize = new System.Drawing.Size(1252, 673);
             this.Controls.Add(this.contentPanel);
             this.Controls.Add(this.SideNavPanel);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "WaiterApp";
-            this.Text = "WaiterApp";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Restaurant Manager Pro";
             this.Load += new System.EventHandler(this.WaiterApp_Load);
             this.SideNavPanel.ResumeLayout(false);
             this.LogoPanel.ResumeLayout(false);
