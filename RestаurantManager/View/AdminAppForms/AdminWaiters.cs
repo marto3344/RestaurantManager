@@ -31,7 +31,7 @@ namespace RestаurantManager.View.AdminAppForms
                     MySqlDataReader rdr = cmd.ExecuteReader();
                     while (rdr.Read())
                     {
-                        waiter = new Waiter( rdr.GetString(1), rdr.GetString(2), rdr.GetDecimal(3));
+                        waiter = new Waiter(rdr.GetString(1), rdr.GetString(2), rdr.GetDecimal(3));
                         ListViewItem waiterItem = new ListViewItem(waiter.Name);
                         waiterItem.SubItems.Add(waiter.Password);
                         waiterItem.SubItems.Add($"{waiter.Salary:f2} lv.");
@@ -49,21 +49,24 @@ namespace RestаurantManager.View.AdminAppForms
 
         private void addWaiterButton_Click(object sender, EventArgs e)
         {
-            string name = waiterNameBox.Text;
-            decimal salary = decimal.Parse(waiterSalaryBox.Text);
-            string password=waiterPasswordBox.Text; 
-            if (controller.AddWaiter(name,password,salary))
+            if(CheckInput())
             {
-                ListViewItem waiterItem = new ListViewItem(name);
-                waiterItem.SubItems.Add(password);
-                waiterItem.SubItems.Add($"{salary:f2} lv.");
-                waitersList.Items.Add(waiterItem);
-                waiterNameBox.Clear();
-                waiterPasswordBox.Clear();
-                waiterSalaryBox.Clear();
-                MessageBox.Show("Waiter added successfully");
+                string name = waiterNameBox.Text;
+                decimal salary = decimal.Parse(waiterSalaryBox.Text);
+                string password = waiterPasswordBox.Text;
+                if (controller.AddWaiter(name, password, salary))
+                {
+                    ListViewItem waiterItem = new ListViewItem(name);
+                    waiterItem.SubItems.Add(password);
+                    waiterItem.SubItems.Add($"{salary:f2} lv.");
+                    waitersList.Items.Add(waiterItem);
+                    waiterNameBox.Clear();
+                    waiterPasswordBox.Clear();
+                    waiterSalaryBox.Clear();
+                    MessageBox.Show("Waiter added successfully");
+                }
+                else MessageBox.Show("Waiter with this name already exists!\nTry again!");
             }
-            else MessageBox.Show("Waiter with this name already exists!\nTry again!");
         }
 
         private void removeWaiterButton_Click(object sender, EventArgs e)
@@ -104,25 +107,24 @@ namespace RestаurantManager.View.AdminAppForms
 
         private void confirmEditButton_Click(object sender, EventArgs e)
         {
-            string preEditedName = waitersList.SelectedItems[0].Text;
-            string[] salaryColumn = waitersList.SelectedItems[0].SubItems[2].Text.Split(' ').ToArray();
-            decimal preEditedSalary = decimal.Parse(salaryColumn[0]);
-            string preEditedPassword = waitersList.SelectedItems[0].SubItems[1].Text;
+            if(CheckInput())
+            {
+                string preEditedName = waitersList.SelectedItems[0].Text;
+                string[] salaryColumn = waitersList.SelectedItems[0].SubItems[2].Text.Split(' ').ToArray();
+                decimal preEditedSalary = decimal.Parse(salaryColumn[0]);
+                string preEditedPassword = waitersList.SelectedItems[0].SubItems[1].Text;
 
-            string newName = waiterNameBox.Text;           
-            string newPassword = waiterPasswordBox.Text;
-            decimal newSalary = decimal.Parse(waiterSalaryBox.Text);
-            
-            if (newName == "" || newSalary <= 0 || waiterSalaryBox.Text == "")
-            {
-                MessageBox.Show("Please enter valid values!");
-            }
-            else
-            {
-                if (controller.EditWaiter(preEditedName, preEditedPassword,preEditedSalary, newName, newPassword,newSalary))
+                string newName = waiterNameBox.Text;
+                string newPassword = waiterPasswordBox.Text;
+                decimal newSalary = decimal.Parse(waiterSalaryBox.Text);
+
+
+
+                if (controller.EditWaiter(preEditedName, preEditedPassword, preEditedSalary, newName, newPassword, newSalary))
                 {
                     waitersList.SelectedItems[0].Text = newName;
                     waitersList.SelectedItems[0].SubItems[2].Text = $"{newSalary:f2} lv.";
+                    waitersList.SelectedItems[0].SubItems[1].Text = newPassword;
                     confirmEditButton.Visible = false;
                     addWaiterButton.BringToFront();
                     waiterNameBox.Clear();
@@ -133,6 +135,35 @@ namespace RestаurantManager.View.AdminAppForms
 
                 }
                 else MessageBox.Show($"Error \n {preEditedName} was not edited!");
+            }
+
+        }
+        private bool CheckInput()
+        {
+            if(waiterNameBox.Text=="")
+            {
+                MessageBox.Show("Please enter waiter name!");
+                return false;
+            }
+            if(waiterPasswordBox.Text=="")
+            {
+                MessageBox.Show("Please enter waiter password!");
+                return false;
+            }
+            try
+            {
+                decimal salary = decimal.Parse(waiterSalaryBox.Text);
+                if (salary <=0)
+                {
+                    MessageBox.Show("Please enter valid value for salary!");
+                    return false;
+                }
+                return true;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Please enter valid value for salary!");
+                return false;
             }
         }
     }

@@ -80,6 +80,8 @@ namespace RestаurantManager.View.WaiterAppForms
         {
             billBox.Text=tables[tableBox.SelectedIndex].Order;
             totalCostLabel.Text = $"Total: {tables[tableBox.SelectedIndex].Bill} lv.";
+            mealBox.SelectedItem = null;
+            quantityBox.Text = null;
         }
         private bool CheckInput()
         {

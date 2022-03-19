@@ -30,6 +30,7 @@
         {
             this.SalaryLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.OkButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // SalaryLabel
@@ -51,12 +52,25 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "If you have any questions, please call the administrator.";
             // 
+            // OkButton
+            // 
+            this.OkButton.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.OkButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.OkButton.Location = new System.Drawing.Point(538, 382);
+            this.OkButton.Name = "OkButton";
+            this.OkButton.Size = new System.Drawing.Size(250, 56);
+            this.OkButton.TabIndex = 6;
+            this.OkButton.Text = "OK";
+            this.OkButton.UseVisualStyleBackColor = false;
+            this.OkButton.Click += new System.EventHandler(this.OkButton_Click);
+            // 
             // ViewSalaryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.OkButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.SalaryLabel);
             this.MaximizeBox = false;
@@ -74,5 +88,6 @@
 
         private System.Windows.Forms.Label SalaryLabel;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button OkButton;
     }
 }

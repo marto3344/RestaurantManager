@@ -62,20 +62,22 @@ namespace RestаurantManager.View.AdminAppForms
 
         private void button2_Click(object sender, EventArgs e)//Add meal button
         {
-            string name = mealNameBox.Text;
-            decimal price = decimal.Parse(mealPriceBox.Text);
-            Console.WriteLine(price);
-            if (controller.AddMeal(name, price))
+            if(CheckInput())
             {
-                ListViewItem mealItem = new ListViewItem(name);
-                mealItem.SubItems.Add($"{price:f2} lv.");
-                listView1.Items.Add(mealItem);
-                mealNameBox.Clear();
-                mealPriceBox.Clear();
-                MessageBox.Show("Meal added successfully");
+                string name = mealNameBox.Text;
+                decimal price = decimal.Parse(mealPriceBox.Text);
+                Console.WriteLine(price);
+                if (controller.AddMeal(name, price))
+                {
+                    ListViewItem mealItem = new ListViewItem(name);
+                    mealItem.SubItems.Add($"{price:f2} lv.");
+                    listView1.Items.Add(mealItem);
+                    mealNameBox.Clear();
+                    mealPriceBox.Clear();
+                    MessageBox.Show("Meal added successfully");
+                }
+                else MessageBox.Show("This meal already exists!\nTry again!");
             }
-            else MessageBox.Show("This meal already exists!\nTry again!");
-
         }
 
         private void removeMealButton_Click_1(object sender, EventArgs e)
@@ -116,17 +118,15 @@ namespace RestаurantManager.View.AdminAppForms
 
         private void confirmEditButton_Click(object sender, EventArgs e)
         {
-            string preEditedName = listView1.SelectedItems[0].Text;
+           if(CheckInput())
+            {
+                 string preEditedName = listView1.SelectedItems[0].Text;
             string[] priceColumn = listView1.SelectedItems[0].SubItems[1].Text.Split(' ').ToArray();
             decimal preEditedPrice = decimal.Parse(priceColumn[0]);
             string newName = mealNameBox.Text;
             decimal newPrice = decimal.Parse(mealPriceBox.Text);
-            if (newName == "" || newPrice <= 0 || mealPriceBox.Text == "")
-            {
-                MessageBox.Show("Please enter valid values!");
-            }
-            else
-            {
+            
+           
                 if (controller.EditMeal(preEditedName, preEditedPrice, newName, newPrice))
                 {
                     listView1.SelectedItems[0].Text = newName;
@@ -141,7 +141,32 @@ namespace RestаurantManager.View.AdminAppForms
                 }
                 else MessageBox.Show($"Error \n {preEditedName} was not edited!");
             }
+            
         }
+        private bool CheckInput()
+        {
+            if(mealNameBox.Text=="")
+            {
+                MessageBox.Show("Please enter valid name!");
+                return false;
+            }
+            try
+            {
+                decimal price=decimal.Parse(mealPriceBox.Text);
+                if (price <=0)
+                {
+                    MessageBox.Show("Please enter valid value for price!");
+                    return false;
+                }
+                return true;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Please enter valid value for price!");
+                return false;
+            }
+        }
+
     }
 
 }

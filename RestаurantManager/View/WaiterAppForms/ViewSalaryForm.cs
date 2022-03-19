@@ -48,5 +48,10 @@ namespace RestаurantManager.View.WaiterAppForms
                 }
             }
         }
+
+        private void OkButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
