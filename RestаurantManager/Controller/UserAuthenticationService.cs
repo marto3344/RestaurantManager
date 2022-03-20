@@ -71,7 +71,7 @@ namespace RestаurantManager.Controller
 
                     foreach (var item in waiters)
                     {
-                        Console.WriteLine($"{item.Name} {item.Password}");
+                       
                         if (item.Name == userName && item.Password == userPassword)
                         {
                             return true;
