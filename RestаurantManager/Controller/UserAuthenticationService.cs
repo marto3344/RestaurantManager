@@ -68,8 +68,10 @@ namespace RestаurantManager.Controller
                         waiter = new Waiter( rdr.GetString(1), rdr.GetString(2),rdr.GetDecimal(3));
                         waiters.Add(waiter);
                     }
+
                     foreach (var item in waiters)
                     {
+                        Console.WriteLine($"{item.Name} {item.Password}");
                         if (item.Name == userName && item.Password == userPassword)
                         {
                             return true;

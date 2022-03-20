@@ -37,7 +37,7 @@ namespace RestаurantManager.View
         {
             string waiterName = WaiterNameBox.Text;
             string waiterPassword = PasswordBox.Text;
-            if (UserAuthenticationService.CheckAdminLogin(waiterName, waiterPassword))
+            if (UserAuthenticationService.CheckWaiterLogin(waiterName, waiterPassword))
             {
                 WaiterApp waiterApp = new WaiterApp();
                 this.Hide();
